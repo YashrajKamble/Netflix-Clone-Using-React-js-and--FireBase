@@ -24,11 +24,11 @@ const Navbar = () => {
             <div className="navbar-right">
                 <img src={search_icon} alt="search icon" className='icons' />
                 <p>Children</p>
-                <img src={bell_icon} alt="search icon" className='icons' />
+                <img src={bell_icon} alt="bell icon" className='icons' />
 
                 <div className="navbar-profile">
-                    <img src={profile_img} alt="search icon" className='profile' />
-                    <img src={caret_icon} alt="search icon" />
+                    <img src={profile_img} alt="profile icon" className='profile' />
+                    <img src={caret_icon} alt="caret icon" />
 
                     <div className="dropdown">
                         <p>Sign Out of Netflix</p>
