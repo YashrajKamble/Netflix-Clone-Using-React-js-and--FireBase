@@ -23,7 +23,12 @@
   list-style: none;
 }
 
+.footer ul li {
+  cursor: pointer;
+}
+
 .copyright-text {
   color: grey;
   font-size: 14px;
+  cursor: pointer;
 }
