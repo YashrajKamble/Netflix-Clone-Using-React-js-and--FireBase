@@ -3,7 +3,7 @@ import cards_data from '../../assets/cards/Cards_data'
 import { useRef, useState } from 'react'
 import { useEffect } from 'react'
 
-const TitleCards = ({ title }) => {
+const TitleCards = ({ title, category }) => {
     const [apiData, setApiData] = useState([])
 
     const cardsRef = useRef()
@@ -22,7 +22,7 @@ const TitleCards = ({ title }) => {
     }
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+        fetch(`https://api.themoviedb.org/3/movie/${category ? category : 'now_playing'}?language=en-US&page=1`, options)
             .then(response => response.json())
             .then(response => setApiData(response.results))
             .catch(err => console.error(err));
@@ -38,7 +38,7 @@ const TitleCards = ({ title }) => {
                     return (
                         <div className="card" key={index}>
                             <img src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path} alt="card image" />
-                            <p>{card.original_language}</p>
+                            <p>{card.original_title}</p>
                         </div>
                     )
                 })}
