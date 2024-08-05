@@ -14,8 +14,7 @@ const Login = () => {
                 <h1>{signState}</h1>
 
                 <form >
-                    {signState === "Sign Up" ? <input type="text" placeholder="Your Name" />
-                        : <></>}
+                    {signState === "Sign In" ? <></> : <input type="text" placeholder="Your Name" />}
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
 
