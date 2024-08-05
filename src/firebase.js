@@ -12,41 +12,42 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-const db = getFirestore(app)
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const signup = (name, email, password) => {
+const signup = async (name, email, password) => {
     try {
-        const res = await createUserWithEmailAndPassword(auth, email, password)
-        const user = res.user
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        const user = res.user;
 
         await addDoc(collection(db, "user"), {
             uid: user.uid,
             name,
             authProvider: "Local",
             email,
-        })
+        });
     } catch (error) {
-        console.log(error)
-        alert(error)
+        console.log(error);
+        alert(error.message);
     }
-}
+};
 
-
-const login = async () => {
+const login = async (email, password) => {
     try {
-        await signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-        console.log(error)
-        alert(error)
+        console.log(error);
+        alert(error.message);
     }
-}
-
+};
 
 const logout = async () => {
-    signOut(auth)
-}
+    try {
+        await signOut(auth);
+    } catch (error) {
+        console.log(error);
+        alert(error.message);
+    }
+};
 
-export { auth, db, signup, login, logout }
-
-
+export { auth, db, signup, login, logout };
