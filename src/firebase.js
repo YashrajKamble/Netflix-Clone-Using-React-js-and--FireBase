@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBwxLRTvZTqokIRZn6Nwt8_BY3o0TDLRmw",
@@ -28,7 +29,7 @@ const signup = async (name, email, password) => {
         });
     } catch (error) {
         console.log(error);
-        alert(error.message);
+        toast.error(error.code.split('/')[1].split('-').join(" "))
     }
 };
 
@@ -37,7 +38,7 @@ const login = async (email, password) => {
         await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
         console.log(error);
-        alert(error.message);
+        toast.error(error.code.split('/')[1].split('-').join(" "))
     }
 };
 
