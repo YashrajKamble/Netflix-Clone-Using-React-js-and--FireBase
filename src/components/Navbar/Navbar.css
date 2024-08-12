@@ -89,9 +89,11 @@
   .navbar {
     padding: 20px 4%;
   }
+
   .navbar-left ul {
     display: none;
   }
+
   .navbar img {
     height: 25px;
   }
@@ -101,6 +103,7 @@
   .nav-dark img {
     height: 20px;
   }
+
   .navbar-right {
     gap: 10px;
   }

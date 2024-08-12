@@ -95,6 +95,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .login-spinner img {
   width: 60px;
 }
@@ -103,6 +104,7 @@
   .login {
     padding: 15px 5%;
   }
+
   .login-form {
     padding: 20px;
     margin-top: 30px;

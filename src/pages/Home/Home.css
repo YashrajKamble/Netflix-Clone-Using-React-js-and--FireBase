@@ -68,6 +68,7 @@
   .hero-caption .title-cards {
     display: none;
   }
+
   .hero-btns {
     margin-bottom: 30px;
   }
@@ -77,10 +78,12 @@
   .hero-caption {
     padding-left: 4%;
   }
+
   .caption-img {
     margin-bottom: 10px;
     width: 40%;
   }
+
   .hero-caption p {
     font-size: 12px;
     margin-bottom: 10px;
@@ -99,9 +102,11 @@
   .caption-img {
     display: none;
   }
+
   .hero-btns .btn img {
     width: 15px;
   }
+
   .hero-btns .btn {
     padding: 4px 10px;
     gap: 5px;
